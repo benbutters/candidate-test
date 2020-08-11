@@ -1,48 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
-<head>
-	<meta charset="utf-8">
+<body>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<button ng-click="getJoke()">Get Joke(s)?</button>
+		<jokelist jokes="jokes"></jokelist>
+	</div>
+	<script>
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope, $http) {
+			$scope.getJoke = function() {
+				$http({
+					method: 'GET',
+					url: 'https://official-joke-api.appspot.com/jokes/programming/random'
+				}).then(function successCallback(response) {
+					$scope.jokes = response.data;
+				}, function errorCallback(response) {
+					$scope.jokes = response.data;
+				});
+			}
+		});
+	</script>
+	<script src="app/directives/jokeslist.js"></script>
+	<script src="app/directives/joke.js"></script>
 
-	<title>Siemens</title>
-
-	<!-- styles entry point -->
 	<link rel="stylesheet" href="css/app.css">
-</head>
-
-<body ng-app="Siemens">
-
-	<!-- View Entry Point -->
-	<div id="app" class="container-fluid" ng-cloak ng-view></div>
-
-	<!-- Feedhenry JS SDK -->
-	<script src="feedhenry.js"></script>
-
-	<script src="lib/jquery-2.1.0.js"></script>
-	<script src="bower/angular/angular.js"></script>
-	<script src="bower/angular-resource/angular-resource.js"></script>
-	<script src="bower/angular-route/angular-route.js"></script>
-	<script src="lib/angular-sanitize/angular-sanitize.js"></script>
-	<script src="bower/underscore/underscore.js"></script>
-
-	<!-- Custom FH Angular Modules -->
-	<script src="app/modules/cloud.js"></script>
-
-	<!-- Client App entry Point -->
-	<script src="app/app.js"></script>
-
-
-	<script src="app/directives/WorkOrderListItem.js"></script>
-	<script src="app/directives/Header.js"></script>
-
-
-	<script src="app/services/services.js"></script>
-	<script src="app/filters/filters.js"></script>
-
-	<script src="app/controllers/Login.js"></script>
-	<script src="app/controllers/WorkOrderList.js"></script>
 
 </body>
 
