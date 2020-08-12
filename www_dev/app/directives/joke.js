@@ -7,7 +7,10 @@ angular.module('myApp')
                 data: "="
             },
             controller: function($scope) {
-
+                $scope.showPunchline = false;
+                $scope.togglePunchline = function() {
+                    $scope.showPunchline = !$scope.showPunchline;
+                }
             }
         }
     })

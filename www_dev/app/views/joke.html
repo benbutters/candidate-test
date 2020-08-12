@@ -1,4 +1,6 @@
 <div>ID: {{ data.id }}</div>
 <div>{{ data.setup }}</div>
-<button ng-init="showPunchline = false" ng-click="showPunchline = !showPunchline">Toggle Punchline!</button>
-<div ng-if="showPunchline === true">{{ data.punchline }}</div>
+<div ng-if="!data.updatedTime">
+    <button ng-click="togglePunchline()">Toggle Punchline!</button>
+</div>
+<div class="punchline" ng-if="showPunchline === true || data.updatedTime != null">{{ data.punchline }}</div>

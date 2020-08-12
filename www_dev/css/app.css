@@ -1,1 +1,51 @@
 @import url("lib/fonts.css");
+
+.content-left {
+  display: inline-block;
+  left: 0;
+  padding-right: 5%;
+  max-width: 45%;
+}
+
+.content-right {
+  display: inline-block;
+  right: 0;
+  padding-left: 5%;
+  max-width: 45%;
+  vertical-align: top;
+}
+
+.jokeslistcard {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.jokeslistcard:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.punchline {
+  font-style: italic;
+}
+
+button {
+  display: inline-block;
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  background-color: #4eb5f1;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #4095c6;
+}

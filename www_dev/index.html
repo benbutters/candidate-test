@@ -5,13 +5,22 @@
 <body>
 
 	<div ng-app="myApp" ng-controller="myCtrl">
-		<button ng-click="getJoke()">Get Joke(s)?</button>
-		<jokelist jokes="jokes"></jokelist>
+		<div class="title">
+			<h1>Programming Jokes Generator</h1>
+		</div>
+		<div class="content-left">
+			<button class="generatejoke" ng-click="getJoke()">Generate Joke!</button>
+			<jokelist jokes="jokes" favourites="favourites"></jokelist>
+		</div>
+		<div class="content-right">
+			<favouritelist favourites="favourites"></favouritelist>
+		</div>
 	</div>
 	<script>
 		var app = angular.module('myApp', []);
 		app.controller('myCtrl', function($scope, $http) {
 			$scope.getJoke = function() {
+				$scope.jokes = [];
 				$http({
 					method: 'GET',
 					url: 'https://official-joke-api.appspot.com/jokes/programming/random'
@@ -21,9 +30,13 @@
 					$scope.jokes = response.data;
 				});
 			}
+			if (!$scope.favourites) {
+				$scope.favourites = [];
+			}
 		});
 	</script>
 	<script src="app/directives/jokeslist.js"></script>
+	<script src="app/directives/favouritelist.js"></script>
 	<script src="app/directives/joke.js"></script>
 
 	<link rel="stylesheet" href="css/app.css">
