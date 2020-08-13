@@ -10,7 +10,7 @@ angular.module('myApp')
             controller: function($scope) {
 
                 $scope.addToFavourites = function(jokeItem) {
-                    jokeItem.updatedTime = new Date().getTime();
+                    jokeItem.updatedTime = service.formatDate(new Date()).getTime();
                     var duplicate = false;
                     if ($scope.favourites && $scope.favourites.length) {
                         for (var x = 0; x < $scope.favourites.length; x++) {
