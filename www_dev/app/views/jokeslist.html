@@ -1,6 +1,6 @@
 <div ng-if="jokes.length > 0" class="jokeslistcard">
     <div ng-repeat="jokeItem in jokes track by $index">
-        <joke data="jokeItem"></joke>
+        <joke data="jokeItem.setup"></joke>
         <button ng-click="addToFavourites(jokeItem)">Favourite</button>
     </div>
 </div>

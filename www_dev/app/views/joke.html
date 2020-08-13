@@ -1,9 +1,14 @@
-<div>ID: {{ data.id }}</div>
-<div ng-if="showPunchline === true || data.updatedTime != null">{{ data.setup }}</div>
-<div ng-if="!data.updatedTime">
-    <button ng-click="togglePunchline()">Toggle Punchline!</button>
+<div ng-if="data.setup">
+    <div>ID: {{ data.id }}</div>
+    <div ng-if="showPunchline === true || data.updatedTime != null">{{ data.setup }}</div>
+    <div ng-if="!data.updatedTime">
+        <button ng-click="togglePunchline()">Toggle Punchline!</button>
+    </div>
+    <div class="punchline">{{ data.punchline }}</div>
+    <div ng-if="data.updatedTime">
+        <div>Favourited: {{ data.updatedTime | date:'medium' }}</div>
+    </div>
 </div>
-<div class="punchline">{{ data.punchline }}</div>
-<div ng-if="data.updatedTime">
-    <div>Favourited: {{ data.updatedTime | date:'medium' }}</div>
+<div ng-if="!data.setup">
+    <div>{{ data }}</div>
 </div>
