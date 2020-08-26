@@ -4,7 +4,7 @@ angular.module('myApp')
             restrict: 'E',
             templateUrl: 'app/views/favouritelist.html',
             scope: {
-                favourites: "="
+                favourites: "@"
             },
             controller: function($scope) {
 
