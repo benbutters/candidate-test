@@ -10,10 +10,11 @@
 		</div>
 		<div class="content-left">
 			<button class="generatejoke" ng-click="getJoke()">Generate Joke!</button>
-			<jokelist jokes="jokes" favourites="favourites"></jokelist>
+			<jokelist jokes="jokes" favourites="favourites" dislikes="dislikes"></jokelist>
 		</div>
 		<div class="content-right">
 			<favouritelist favourites="favourites"></favouritelist>
+			<dislikes dislikes="dislikes"></dislikes>
 		</div>
 	</div>
 	<script>
@@ -33,10 +34,14 @@
 			if (!$scope.favourites) {
 				$scope.favourites = [];
 			}
+			if (!$scope.dislikes) {
+				$scope.dislikes = [];
+			}
 		});
 	</script>
 	<script src="app/directives/jokeslist.js"></script>
 	<script src="app/directives/favouritelist.js"></script>
+	<script src="app/directives/dislikes.js"></script>
 	<script src="app/directives/joke.js"></script>
 	<script src="app/services/services.js"></script>
 

@@ -1,5 +1,7 @@
 <h3>Favourites List</h3>
-<div class="jokeslistcard" ng-repeat="jokeItem in favourites track by $index">
-    <joke data="jokeItem"></joke>
-    <button ng-click="removeFromFavourites(jokeItem.id)">Unfavourite</button>
+<div class="favouritedJoke">
+    <div class="jokeslistcard" ng-repeat="jokeItem in favourites track by $index">
+        <joke data="jokeItem"></joke>
+        <button ng-click="removeFromFavourites(jokeItem.id)">Unfavourite</button>
+    </div>
 </div>

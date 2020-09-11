@@ -1,0 +1,7 @@
+<h3>Dislikes List</h3>
+<div class="dislikedJoke">
+    <div class="jokeslistcard" ng-repeat="jokeItem in dislikes track by $index">
+        <joke data="jokeItem"></joke>
+        <button ng-click="removeFromDislikes(jokeItem.id)">Undislike</button>
+    </div>
+</div>

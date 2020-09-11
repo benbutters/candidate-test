@@ -49,3 +49,21 @@ button {
 button:hover {
   background-color: #4095c6;
 }
+
+.generatedJoke {
+  background-color: #4095c6;
+  color: yellow;
+  border-radius: 15px;
+}
+
+.favouritedJoke {
+  background-color: green;
+  color: whitesmoke;
+  border-radius: 15px;
+}
+
+.dislikedJoke {
+  background-color: red;
+  color: aqua;
+  border-radius: 15px;
+}

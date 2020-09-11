@@ -4,11 +4,12 @@ angular.module('myApp')
             restrict: 'E',
             templateUrl: 'app/views/favouritelist.html',
             scope: {
-                favourites: "@"
+                favourites: "="
             },
             controller: function($scope) {
 
-                $scope.favourites = JSON.stringify(JSON.parse(localStorage.getItem('favourites')));
+                $scope.favourites = JSON.parse(localStorage.getItem('favourites'));
+                //$scope.favourites = JSON.stringify(JSON.parse(localStorage.getItem('favourites')));
 
                 $scope.removeFromFavourites = function(jokeId) {
                     for (var x = 0; x < $scope.favourites.length; x++) {
