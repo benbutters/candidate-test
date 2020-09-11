@@ -12,9 +12,9 @@
 			<button class="generatejoke" ng-click="getJoke()">Generate Joke!</button>
 			<jokelist jokes="jokes" favourites="favourites" dislikes="dislikes"></jokelist>
 		</div>
-		<div class="content-right">
-			<favouritelist favourites="favourites"></favouritelist>
-			<dislikes dislikes="dislikes"></dislikes>
+		<div>
+			<favouritelist style="display:inline-block; width:33%" favourites="favourites"></favouritelist>
+			<dislikes class="content-right" style="display:inline-block; width:33%" dislikes="dislikes"></dislikes>
 		</div>
 	</div>
 	<script>

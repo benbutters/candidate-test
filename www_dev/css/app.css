@@ -64,6 +64,6 @@ button:hover {
 
 .dislikedJoke {
   background-color: red;
-  color: aqua;
+  color: red;
   border-radius: 15px;
 }

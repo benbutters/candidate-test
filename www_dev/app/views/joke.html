@@ -1,11 +1,9 @@
 <div>ID: {{ data.id }}</div>
-<div>{{ data.setup }}</div>
-<!--<div ng-if="showPunchline === true">{{ data.setup }}</div>-->
+<div ng-if="showPunchline === true">Joke: {{ data.setup }}</div>
 <div ng-if="!data.updatedTime">
     <button ng-click="togglePunchline()">Toggle Punchline!</button>
 </div>
-<div ng-if="showPunchline === true || data.updatedTime" class="punchline">{{ data.punchline }}</div>
-<!--<div class="punchline">{{ data.punchline }}</div>-->
+<div class="punchline">Punchline: {{ data.punchline }}</div>
 <div ng-if="data.updatedTime">
     <div>Favourited: {{ data.updatedTime | date:'medium' }}</div>
 </div>
